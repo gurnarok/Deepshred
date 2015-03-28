@@ -1,0 +1,6 @@
+#!/bin/bash
+DIR=$1
+echo "Deleting files from $DIR"
+find $DIR -exec shred -vuzn 6 --random-source=/dev/urandom {} \;
+rm -rfv $DIR
+echo "Have a nice day :)"
